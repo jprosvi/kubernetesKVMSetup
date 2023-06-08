@@ -1,0 +1,7 @@
+$ nmcli connection show
+$ sudo nmcli connection add type bridge autoconnect yes con-name kvmbr0 ifname kvmbr0
+$ sudo nmcli connection modify kvmbr0 ipv4.addresses 192.168.1.100/24 gw4 192.168.1.254 ipv4.method manual
+$ sudo nmcli connection modify kvmbr0 ipv4.dns 8.8.4.4,8.8.8.8
+$ sudo nmcli connection del enp6s0
+$ sudo nmcli connection add type bridge-slave autoconnect yes con-name enp6s0 ifname enp6s0 master kvmbr0
+$ sudo nmcli connection up kvmbr0

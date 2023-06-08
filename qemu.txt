@@ -1,0 +1,1 @@
+sudo qemu-img create -f qcow2 -F qcow2 -b /var/lib/libvirt/images/ubuntu22.04.qcow2 /var/lib/libvirt/images/k8s_control.qcow2

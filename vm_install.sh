@@ -1,0 +1,9 @@
+#!/bin/bash
+sudo virt-install --name k8s-control \
+--os-variant ubuntu22.04 \
+--ram 8192 \
+--disk path=/var/lib/libvirt/images/k8s_control.qcow2,format=qcow2 \
+--network bridge=kvmbr0 \
+--vcpus 2 \
+--import \
+--noautoconsole
